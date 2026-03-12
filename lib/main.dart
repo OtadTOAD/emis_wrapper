@@ -1,3 +1,4 @@
+import 'package:emis_wrapper/components/login_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
+          // childrenT horizontally, and tries to be as tall as its parent.
           //
           // Column has various properties to control how it sizes itself and
           // how it positions its children. Here we use mainAxisAlignment to
@@ -109,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            LoginButton(),
           ],
         ),
       ),
