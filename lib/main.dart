@@ -1,3 +1,4 @@
+import 'package:emis_wrapper/pages/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,8 +6,10 @@ void main() {
 }
 
 class EmisWrapper extends StatelessWidget {
+  const EmisWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return MaterialApp(home: Dashboard());
   }
 }
