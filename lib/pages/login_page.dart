@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../components/phone_input_field.dart';
-import 'components/otp_input_field.dart';
+import '../components/otp_input_field.dart';
 import '../components/login_button.dart';
-import 'services/auth_service.dart';
+import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -146,7 +146,6 @@ class _LoginPageState extends State<LoginPage>
             children: [
               SizedBox(height: size.height * 0.06),
 
-              // Logo / Brand mark
               Container(
                 width: 52,
                 height: 52,
@@ -199,7 +198,6 @@ class _LoginPageState extends State<LoginPage>
                       const SizedBox(height: 44),
 
                       if (!_otpSent) ...[
-                        // Country code + phone input
                         PhoneInputField(
                           controller: _phoneController,
                           selectedCountryCode: _selectedCountryCode,
@@ -208,15 +206,14 @@ class _LoginPageState extends State<LoginPage>
                               setState(() => _selectedCountryCode = val),
                         ),
                       ] else ...[
-                        // OTP input
                         OtpInputField(controller: _otpController),
                         const SizedBox(height: 16),
                         GestureDetector(
                           onTap: _sendOtp,
-                          child: Text(
+                          child: const Text(
                             'Resend code',
                             style: TextStyle(
-                              color: const Color(0xFF6366F1),
+                              color: Color(0xFF6366F1),
                               fontWeight: FontWeight.w600,
                               fontSize: 14,
                             ),
@@ -224,7 +221,6 @@ class _LoginPageState extends State<LoginPage>
                         ),
                       ],
 
-                      // Error message
                       if (_errorMessage != null) ...[
                         const SizedBox(height: 14),
                         Row(
@@ -277,7 +273,6 @@ class _LoginPageState extends State<LoginPage>
 
                       const SizedBox(height: 40),
 
-                      // Terms
                       Center(
                         child: Text(
                           'By continuing, you agree to our Terms of Service\nand Privacy Policy',
